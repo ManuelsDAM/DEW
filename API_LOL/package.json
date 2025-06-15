@@ -1,0 +1,11 @@
+{
+  "name": "lol-champs",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url ./"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0"
+  }
+}
