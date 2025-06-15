@@ -78,11 +78,3 @@ document.addEventListener('DOMContentLoaded', () => {
     window.app = new ChampionsApp();
 });
 
-// Manejar errores globales
-window.addEventListener('error', (e) => {
-    console.error('Error global:', e.error);
-});
-
-window.addEventListener('unhandledrejection', (e) => {
-    console.error('Promise rejection:', e.reason);
-});
