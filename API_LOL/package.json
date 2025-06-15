@@ -7,7 +7,7 @@
     "start": "parcel index.html",
     "build": "parcel build index.html --public-url ./",
     "clean": "rm -rf dist .parcel-cache",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist -r https://github.com/ManuelsDAM/DEW.git -b gh-pages"
   },
   "keywords": ["league-of-legends", "api", "champions", "parcel"],
   "author": "Tu nombre",
