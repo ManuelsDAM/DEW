@@ -1,12 +1,15 @@
 {
   "name": "lol-champs",
   "version": "1.0.0",
+  "description": "Proyecto de campeones de League of Legends usando Parcel y GitHub Pages",
+  "homepage": "https://manuelsdam.github.io/DEW/API_LOL/",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html --dist-dir dist"
-
+    "build": "parcel build src/index.html --dist-dir dist",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "parcel": "^2.0.0"
   }
 }
