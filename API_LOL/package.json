@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url ./"
+    "build": "parcel build -d build src/index.html --https://github.com/ManuelsDAM/DEW/tree/master/API_LOL/src ./"
   },
   "devDependencies": {
     "parcel": "^2.0.0"
