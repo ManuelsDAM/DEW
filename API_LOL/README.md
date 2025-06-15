@@ -7,14 +7,12 @@ Una aplicación web interactiva que muestra información sobre todos los campeon
 - **Visualización de campeones**: Muestra todos los campeones con sus imágenes, estadísticas y información
 - **Búsqueda en tiempo real**: Busca campeones por nombre, título o rol
 - **Filtros por rol**: Filtra campeones por Asesino, Luchador, Mago, Tirador, Soporte y Tanque
-- **Diseño responsivo**: Compatible con dispositivos móviles y de escritorio
-- **Interfaz moderna**: Diseño atractivo inspirado en League of Legends
+- **Interfaz moderna**: Diseño inspirado en League of Legends
 
 ##  Tecnologías utilizadas
 
 - **HTML5**: Estructura semántica
-- **CSS3**: Estilos modernos con gradientes y efectos
-- **JavaScript ES6+**: Lógica de la aplicación con módulos
+- **CSS**: Estilos modernos con gradientes y efectos
 - **Parcel**: Empaquetador de módulos
 - **API de Riot Games**: Datos oficiales de League of Legends
 
