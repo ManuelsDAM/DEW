@@ -1,15 +1,21 @@
 {
-  "name": "lol-champs",
+  "name": "lol-champions-app",
   "version": "1.0.0",
-  "description": "Proyecto de campeones de League of Legends usando Parcel y GitHub Pages",
-  "homepage": "https://manuelsdam.github.io/DEW/API_LOL/",
+  "description": "League of Legends Champions App con Parcel",
+  
   "scripts": {
-    "start": "parcel src/index.html",
-    "build": "parcel build src/index.html --dist-dir dist",
-    "deploy": "gh-pages -d dist"
+    "start": "parcel index.html",
+    "build": "parcel build index.html --public-url ./",
+    "clean": "rm -rf dist .parcel-cache",
+    "deploy": "npm run build && gh-pages -d dist"
   },
+  "keywords": ["league-of-legends", "api", "champions", "parcel"],
+  "author": "Tu nombre",
+  "license": "MIT",
   "devDependencies": {
-    "gh-pages": "^6.3.0",
-    "parcel": "^2.0.0"
-  }
+    "parcel": "^2.9.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
 }

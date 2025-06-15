@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League of Legends Champions</title>
+    <link rel="stylesheet" href="./src/styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>League of Legends</h1>
+            <p class="subtitle">Descubre todos los campeones del Rift</p>
+        </header>
+
+        <div class="search-container">
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Buscar campeón..."
+                autocomplete="off"
+            >
+        </div>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="Assassin">Asesino</button>
+            <button class="filter-btn" data-filter="Fighter">Luchador</button>
+            <button class="filter-btn" data-filter="Mage">Mago</button>
+            <button class="filter-btn" data-filter="Marksman">Tirador</button>
+            <button class="filter-btn" data-filter="Support">Soporte</button>
+            <button class="filter-btn" data-filter="Tank">Tanque</button>
+        </div>
+
+        <div id="loading" class="loading">
+            Cargando campeones...
+        </div>
+
+        <div id="error" class="error" style="display: none;">
+            Error al cargar los datos. Por favor, intenta de nuevo.
+        </div>
+
+        <div class="champion-count" id="championCount" style="display: none;"></div>
+
+        <div class="champions-grid" id="championsGrid"></div>
+    </div>
+
+    <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>
