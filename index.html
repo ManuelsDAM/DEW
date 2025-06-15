@@ -1,9 +1,36 @@
-<!DOCTYPE html><html lang=es><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><title>Campeones LoL</title><link rel=stylesheet href=/API_LOL.f701e8e6.css><body>
-  <header>
-    <h1>Campeones de League of Legends</h1>
-    <select id=champSelect></select>
-  </header>
-  <main id=champInfo></main>
-  <script type=module src=/API_LOL.d4258762.js></script>
+<!DOCTYPE html><html lang=es><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><title>League of Legends Champions</title><link rel=stylesheet href=API_LOL.87dd9a7b.css><body>
+    <div class=container>
+        <header>
+            <h1>League of Legends</h1>
+            <p class=subtitle>Descubre todos los campeones del Rift</p>
+        </header>
 
+        <div class=search-container>
+            <input id=searchInput placeholder="Buscar campeón..." autocomplete=off>
+        </div>
+
+        <div class=filter-buttons>
+            <button class="active filter-btn" data-filter=all>Todos</button>
+            <button class=filter-btn data-filter=Assassin>Asesino</button>
+            <button class=filter-btn data-filter=Fighter>Luchador</button>
+            <button class=filter-btn data-filter=Mage>Mago</button>
+            <button class=filter-btn data-filter=Marksman>Tirador</button>
+            <button class=filter-btn data-filter=Support>Soporte</button>
+            <button class=filter-btn data-filter=Tank>Tanque</button>
+        </div>
+
+        <div id=loading class=loading>
+            Cargando campeones...
+        </div>
+
+        <div id=error class=error style=display:none>
+            Error al cargar los datos. Por favor, intenta de nuevo.
+        </div>
+
+        <div class=champion-count id=championCount style=display:none></div>
+
+        <div class=champions-grid id=championsGrid></div>
+    </div>
+
+    <script src=API_LOL.b685a3a4.js nomodule defer></script><script type=module src=API_LOL.5194fbfc.js></script>
 
