@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 11 - Base de Datos Coches</title>
+</head>
+<body>
+    <h1>Actividad 11 - Gestión de Base de Datos de Coches</h1>
+    <p>Abre la consola del navegador (F12) para ver los resultados</p>
+
+    <script>
+        function Coche(modelo, color, matricula, ano) {
+            this.modelo = modelo;
+            this.color = color;
+            this.matricula = matricula;
+            this.ano = ano;
+        }
+
+        const coches = {};
+
+        function agregarCoche(modelo, color, matricula, ano) {
+            const nuevoCoche = new Coche(modelo, color, matricula, ano);
+            coches[matricula] = nuevoCoche;
+        }
+
+        function eliminarCoche(matricula) {
+            delete coches[matricula];
+        }
+
+        function mostrarTodosLosCoches() {
+            console.log("Base de datos de coches:");
+            for (const matricula in coches) {
+                const coche = coches[matricula];
+                console.log(`Modelo: ${coche.modelo}, Color: ${coche.color}, Matrícula: ${coche.matricula}, Año: ${coche.ano}`);
+            }
+        }
+
+        // Ejemplo de uso
+        console.log("Agregando coches...");
+        agregarCoche("Toyota Corolla", "Rojo", "1234ABC", 2020);
+        agregarCoche("Honda Civic", "Azul", "5678DEF", 2019);
+        agregarCoche("Ford Focus", "Blanco", "9012GHI", 2021);
+        agregarCoche("Nissan Altima", "Negro", "3456JKL", 2022);
+
+        mostrarTodosLosCoches();
+
+        console.log("\nEliminando el Honda Civic...");
+        eliminarCoche("5678DEF");
+
+        console.log("\nBase de datos después de la eliminación:");
+        mostrarTodosLosCoches();
+    </script>
+</body>
+</html>

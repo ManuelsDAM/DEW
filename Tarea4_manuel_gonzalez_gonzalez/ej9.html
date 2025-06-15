@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 9 - Letra DNI</title>
+</head>
+<body>
+    <h1>Actividad 9 - Calcular Letra de DNI</h1>
+    <p>Abre la consola del navegador (F12) para ver los resultados</p>
+
+    <script>
+        function calcularLetraDNI(dni) {
+            if (dni < 0 || dni > 99999999) {
+                return "DNI inválido";
+            }
+            
+            const letras = "TRWAGMYFPDXBNJZSQVHLCKET";
+            const resto = dni % 23;
+            return letras[resto];
+        }
+
+        // Pruebas
+        console.log("DNI 12345678:", calcularLetraDNI(12345678));
+        console.log("DNI 87654321:", calcularLetraDNI(87654321));
+        console.log("DNI 43380367:", calcularLetraDNI(43380367));
+        console.log("DNI 99999999:", calcularLetraDNI(99999999));
+        console.log("DNI 0:", calcularLetraDNI(0));
+    </script>
+</body>
+</html>

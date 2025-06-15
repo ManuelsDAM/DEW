@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 8 - Contador de Apariciones</title>
+</head>
+<body>
+    <h1>Actividad 8 - Contador de Apariciones Anteriores</h1>
+    <p>Abre la consola del navegador (F12) para ver los resultados</p>
+
+    <script>
+        function generarArrayAleatorio(numElementos = 10, minimo = 100, maximo = 200) {
+            const array = [];
+            for (let i = 0; i < numElementos; i++) {
+                array.push(Math.floor(Math.random() * (maximo - minimo + 1)) + minimo);
+            }
+            return array;
+        }
+
+        const array50 = generarArrayAleatorio(50, 10, 20);
+        const apariciones = {};
+
+        console.log("Array de 50 elementos:", array50);
+        
+        array50.forEach((num, i) => {
+            if (apariciones[num]) {
+                console.log(`Elemento ${num} en posición ${i}: repetido (había aparecido ${apariciones[num]} veces)`);
+                apariciones[num]++;
+            } else {
+                console.log(`Elemento ${num} en posición ${i}: primera vez`);
+                apariciones[num] = 1;
+            }
+        });
+    </script>
+</body>
+</html>

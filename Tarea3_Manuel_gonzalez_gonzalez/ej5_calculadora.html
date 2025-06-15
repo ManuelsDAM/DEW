@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Ejercicio 5 Calculadora de Propina y de potencias</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input[type="number"] {
+            width: 80px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h3>No hay calculadora en la actividad de la unidad 2. Hay una calculadora de propina, le añado los botones a esta.</h3>
+ 
+    <!-- Sección de Calculadora de Potencias -->
+    <div class="container">
+        <h1>Calculadora de Potencias</h1>
+        <p>
+            Base: <input type="number" id="base"> 
+            Exponente: <input type="number" id="exponente">
+        </p>
+        
+        <button onclick="calcularPotencia()">Calcular x^y</button>
+        <button onclick="calcularRaizCuadrada()">Calcular √x</button>
+        
+        <p>Resultado: <span id="resultadoPotencia">-</span></p>
+    </div>
+
+    <!-- Sección de Calculadora de Propina -->
+    <div class="container">
+        <h1>Calculadora de Propina</h1>
+        <p>Ingrese el monto de la factura: <input type="number" id="montoFactura"> €</p>
+        <p>Seleccione el porcentaje de propina:
+            <select id="porcentajePropina" onchange="calcularPropina()">
+                <option value="10">10%</option>
+                <option value="15">15%</option>
+                <option value="20">20%</option>
+            </select>
+        </p>
+        <button onclick="calcularPropina()">Calcular Propina</button>
+        <p>La propina es: <span id="resultadoPropina"></span> €</p>
+    </div>
+
+    <script>
+        // Función para calcular potencias (x^y)
+        function calcularPotencia() {
+            let base = parseFloat(document.getElementById("base").value);
+            let exponente = parseFloat(document.getElementById("exponente").value);
+            let resultado = Math.pow(base, exponente);
+            document.getElementById("resultadoPotencia").textContent = resultado.toFixed(4);
+        }
+
+        // Función para calcular raíz cuadrada
+        function calcularRaizCuadrada() {
+            let base = parseFloat(document.getElementById("base").value);
+            let resultado = Math.sqrt(base);
+            document.getElementById("resultadoPotencia").textContent = resultado.toFixed(4);
+        }
+
+        // Función para calcular la propina
+        function calcularPropina() {
+            let montoFactura = parseFloat(document.getElementById("montoFactura").value);
+            let porcentajePropina = parseFloat(document.getElementById("porcentajePropina").value);
+            let propina = (montoFactura * porcentajePropina) / 100;
+            document.getElementById("resultadoPropina").textContent = propina.toFixed(2);
+        }
+    </script>
+</body>
+</html>

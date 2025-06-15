@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Actividad 4 Cuestionario</title>
+</head>
+<body>
+
+<h2>Cuestionario</h2>
+
+<div>
+    <p id="q1">1. El sol es una estrella.</p>
+    <button onclick="verificar('q1', true)">Verdadero</button>
+    <button onclick="verificar('q1', false)">Falso</button>
+</div>
+
+<div>
+    <p id="q2">2. El agua hierve a 50°C.</p>
+    <button onclick="verificar('q2', false)">Verdadero</button>
+    <button onclick="verificar('q2', true)">Falso</button>
+</div>
+
+<div>
+    <p id="q3">3. La tierra es el centro del universo.</p>
+    <button onclick="verificar('q3', false)">Verdadero</button>
+    <button onclick="verificar('q3', true)">Falso</button>
+</div>
+
+<div>
+    <p id="q4">4. El oceano atlantico es el más grande del mundo.</p>
+    <button onclick="verificar('q4', false)">Verdadero</button>
+    <button onclick="verificar('q4', true)">Falso</button>
+</div>
+
+<div>
+    <p id="q5">5. Las plantas realizan la fotosíntesis.</p>
+    <button onclick="verificar('q5', true)">Verdadero</button>
+    <button onclick="verificar('q5', false)">Falso</button>
+</div>
+
+<div>
+    <p id="q6">6. Euler no sabía matemáticas.</p>
+    <button onclick="verificar('q6', false)">Verdadero</button>
+    <button onclick="verificar('q6', true)">Falso</button>
+</div>
+
+<div>
+    <p id="q7">7. Un año tiene 12 meses.</p>
+    <button onclick="verificar('q7', true)">Verdadero</button>
+    <button onclick="verificar('q7', false)">Falso</button>
+</div>
+
+
+
+<script>
+function verificar(id, esCorrecto) {
+    const texto = document.getElementById(id);
+    if (esCorrecto) {
+        texto.style.color = "green";
+    } else {
+        texto.style.color = "red";
+    }
+}
+</script>
+
+</body>
+</html>

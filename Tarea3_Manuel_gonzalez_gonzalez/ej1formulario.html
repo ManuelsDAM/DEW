@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario ejercicio 1</title>
+</head>
+<body>
+  <h2>Formulario de Registro</h2>
+  <form onsubmit="enviarDatos(event)">
+    <input type="text" placeholder="Nombre" id="nombre" required><br>
+    <input type="text" placeholder="Apellidos" id="apellidos" required><br>
+    <input type="text" placeholder="Calle" id="calle"><br>
+    <input type="text" placeholder="Código Postal" id="cp"><br>
+    <input type="text" placeholder="Localidad" id="localidad"><br>
+    <input type="text" placeholder="Municipio" id="municipio"><br>
+    <input type="tel" placeholder="Teléfono" id="telefono"><br>
+    <input type="email" placeholder="Correo" id="correo"><br><br>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <script>
+    function enviarDatos(event) {
+      event.preventDefault();
+      const datos = `
+        Nombre: ${document.getElementById("nombre").value}
+        Apellidos: ${document.getElementById("apellidos").value}
+        Dirección: ${document.getElementById("calle").value}, CP: ${document.getElementById("cp").value}, 
+        Localidad: ${document.getElementById("localidad").value}, Municipio: ${document.getElementById("municipio").value}
+        Teléfono: ${document.getElementById("telefono").value}
+        Correo: ${document.getElementById("correo").value}
+      `;
+      window.opener.postMessage(datos, "*");
+      window.close();
+    }
+  </script>
+</body>
+</html>

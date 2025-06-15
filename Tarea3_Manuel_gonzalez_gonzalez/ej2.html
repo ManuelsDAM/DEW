@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title id="titulo">Ejercicio 2</title>
+</head>
+<body>
+  <h1 id="tituloH1">Ejercicio 2</h1>
+  <button onclick="cambiarTitulo()">Cambiar Título</button>
+
+  <script>
+    function cambiarTitulo() {
+      const nuevoTitulo = prompt("Introduce el nuevo título:");
+      if (nuevoTitulo) {
+        document.title = nuevoTitulo;
+        document.getElementById("tituloH1").textContent = nuevoTitulo;
+      }
+    }
+  </script>
+</body>
+</html>

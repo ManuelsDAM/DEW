@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Actividad 4</title>
+</head>
+<body>
+  <script>
+    const numero = Math.floor(Math.random() * 11);
+    if (numero <= 5) {
+      location.href = "https://www.google.com";
+    } else {
+      const hora = new Date().getHours();
+      if (hora < 12) {
+        alert("¡Buenos días!");
+      } else {
+        alert("¡Buenas tardes!");
+      }
+    }
+  </script>
+</body>
+</html>

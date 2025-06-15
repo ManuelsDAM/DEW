@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 1: Ventana Principal</title>
+</head>
+<body>
+  <h1>Registro de Usuario</h1>
+  <button onclick="abrirVentana()">Registrar</button>
+  <div id="resultado"></div>
+
+  <script>
+    function abrirVentana() {
+      if (confirm("¿Deseas abrir el formulario de registro?")) {
+        const ventana = window.open("formulario.html", "Formulario", "width=500,height=600");
+      } else {
+        alert("No se pudo completar el registro.");
+      }
+    }
+
+    window.addEventListener("message", function(event) {
+      document.getElementById("resultado").innerHTML = `<h3>Datos recibidos:</h3><pre>${event.data}</pre>`;
+    });
+  </script>
+</body>
+</html>

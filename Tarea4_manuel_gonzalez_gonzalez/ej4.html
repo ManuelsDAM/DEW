@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 4 - Procesar Array</title>
+</head>
+<body>
+    <h1>Actividad 4 - Procesar Array según Condiciones</h1>
+    <p>Abre la consola del navegador (F12) para ver los resultados</p>
+
+    <script>
+        function generarArrayAleatorio(numElementos = 10, minimo = 100, maximo = 200) {
+            const array = [];
+            for (let i = 0; i < numElementos; i++) {
+                array.push(Math.floor(Math.random() * (maximo - minimo + 1)) + minimo);
+            }
+            return array;
+        }
+
+        function procesarArray() {
+            const arrayInicial = generarArrayAleatorio(15, -10, 20);
+            let arrayResultado = [];
+            
+            console.log("Array inicial:", arrayInicial);
+            
+            arrayInicial.forEach(x => {
+                if (x <= -5) {
+                    const eliminado = arrayResultado.shift();
+                    console.log(`x=${x}, eliminar primer elemento, eliminado: ${eliminado || 'ninguno'}, tamaño: ${arrayResultado.length}, array: [${arrayResultado}]`);
+                } else if (x > -5 && x <= 0) {
+                    const eliminado = arrayResultado.pop();
+                    console.log(`x=${x}, eliminar último elemento, eliminado: ${eliminado || 'ninguno'}, tamaño: ${arrayResultado.length}, array: [${arrayResultado}]`);
+                } else if (x > 0 && x <= 10) {
+                    arrayResultado.unshift(x);
+                    console.log(`x=${x}, añadir al principio, añadido: ${x}, tamaño: ${arrayResultado.length}, array: [${arrayResultado}]`);
+                } else if (x > 10) {
+                    arrayResultado.push(x);
+                    console.log(`x=${x}, añadir al final, añadido: ${x}, tamaño: ${arrayResultado.length}, array: [${arrayResultado}]`);
+                }
+            });
+        }
+
+        procesarArray();
+    </script>
+</body>
+</html>

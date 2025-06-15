@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 1 - Array Aleatorio</title>
+</head>
+<body>
+    <h1>Actividad 1 - Generar Array Aleatorio</h1>
+    <p>Abre la consola del navegador (F12) para ver los resultados</p>
+
+    <script>
+        function generarArrayAleatorio(numElementos = 10, minimo = 100, maximo = 200) {
+            const array = [];
+            for (let i = 0; i < numElementos; i++) {
+                array.push(Math.floor(Math.random() * (maximo - minimo + 1)) + minimo);
+            }
+            return array;
+        }
+
+        // Pruebas
+        console.log("Array con valores por defecto:", generarArrayAleatorio());
+        console.log("Array de 5 elementos entre 1 y 50:", generarArrayAleatorio(5, 1, 50));
+        console.log("Array de 15 elementos entre 0 y 10:", generarArrayAleatorio(15, 0, 10));
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 6 - Máximo y Mínimo</title>
+</head>
+<body>
+    <h1>Actividad 6 - Encontrar Máximo y Mínimo</h1>
+    <p>Abre la consola del navegador (F12) para ver los resultados</p>
+
+    <script>
+        function generarArrayAleatorio(numElementos = 10, minimo = 100, maximo = 200) {
+            const array = [];
+            for (let i = 0; i < numElementos; i++) {
+                array.push(Math.floor(Math.random() * (maximo - minimo + 1)) + minimo);
+            }
+            return array;
+        }
+
+        function encontrarMaxMin(array) {
+            let max = array[0];
+            let min = array[0];
+            let indiceMax = 0;
+            let indiceMin = 0;
+            
+            for (let i = 1; i < array.length; i++) {
+                if (array[i] > max) {
+                    max = array[i];
+                    indiceMax = i;
+                }
+                if (array[i] < min) {
+                    min = array[i];
+                    indiceMin = i;
+                }
+            }
+            
+            return {
+                maximo: { valor: max, indice: indiceMax },
+                minimo: { valor: min, indice: indiceMin }
+            };
+        }
+
+        const arrayMaxMin = generarArrayAleatorio(20, -100, 100);
+        const resultado = encontrarMaxMin(arrayMaxMin);
+        
+        console.log("Array:", arrayMaxMin);
+        console.log(`Máximo: ${resultado.maximo.valor} en índice ${resultado.maximo.indice}`);
+        console.log(`Mínimo: ${resultado.minimo.valor} en índice ${resultado.minimo.indice}`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Actividad 5 Idiomas</title>
+</head>
+<body>
+
+<h2>Selecciona tu idioma</h2>
+
+<button onclick="saludo('es')">Español</button>
+<button onclick="saludo('fr')">Francés</button>
+<button onclick="saludo('en')">Inglés</button>
+
+<script>
+function saludo(idioma) {
+    if (idioma === 'es') {
+        alert("¡Bienvenido!");
+        console.log("Idioma seleccionado: Español");
+    } else if (idioma === 'fr') {
+        alert("Bienvenue!");
+        console.log("Idioma seleccionado: Francés");
+    } else if (idioma === 'en') {
+        alert("Welcome!");
+        console.log("Idioma seleccionado: Inglés");
+    }
+}
+</script>
+
+</body>
+</html>

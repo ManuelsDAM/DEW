@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 10 - Fibonacci</title>
+</head>
+<body>
+    <h1>Actividad 10 - Sucesión de Fibonacci</h1>
+    <p>Abre la consola del navegador (F12) para ver los resultados</p>
+
+    <script>
+        function fibonacci(n) {
+            if (n <= 1) return n;
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+
+        console.log("Sucesión de Fibonacci hasta el término 10:");
+        for (let i = 0; i <= 10; i++) {
+            console.log(`F(${i}) = ${fibonacci(i)}`);
+        }
+
+        console.log("\nAlgunos términos adicionales:");
+        console.log(`F(15) = ${fibonacci(15)}`);
+        console.log(`F(20) = ${fibonacci(20)}`);
+    </script>
+</body>
+</html>

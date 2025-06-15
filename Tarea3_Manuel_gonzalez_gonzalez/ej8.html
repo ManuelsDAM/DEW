@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Historias Aleatorias</title>
+</head>
+<body>
+
+  <h1>Generador de Historias</h1>
+
+  <label for="nombre"><strong>Nombre del Protagonista:</strong></label><br />
+  <input type="text" id="nombre" required /><br /><br />
+
+  <label for="lepero"><strong>LEPERO:</strong></label>
+  <input type="radio" name="localidad" value="lepero" id="lepero" />
+
+  <label for="murciano"><strong>MURCIANO:</strong></label>
+  <input type="radio" name="localidad" value="murciano" id="murciano" />
+
+  <br /><br />
+
+  <input type="button" id="btnSubmit" value="Generar Historia" />
+
+  <p id="texto" style="width: 40%; background-color: #FFC126; color:black;"></p>
+
+  <script>
+    document.getElementById('btnSubmit').addEventListener("click", function () {
+      const nombre = document.getElementById('nombre').value.trim();
+      const texto = document.getElementById('texto');
+      const lepero = document.getElementById('lepero').checked;
+      const murciano = document.getElementById('murciano').checked;
+
+      texto.innerHTML = "";
+
+      if (!nombre || (!lepero && !murciano)) {
+        alert("Por favor, introduce un nombre y selecciona una localidad.");
+        return;
+      }
+
+      let historias = [];
+
+      if (murciano) {
+        historias = [
+          "En Murcia las naranjas siempre han sido muy baratas, pero ahora le parecen caras.",
+          "La ciudad se llena siempre en verano, pero en invierno es un desierto.",
+          nombre + " visitaba a su abuela, ella siempre le hacía buena comida.",
+          "La Juventud lo dejó deprimido y ahora " + nombre + " solo tiene a su peluche.",
+          "No tenía ganas de hacer deporte así que " + nombre + " engordó hasta el límite.",
+          "Los donuts eran su debilidad, pero últimamente estaba comportándose de forma extraña.",
+          nombre + " antes era calvo, pero se hizo un injerto capilar."
+        ];
+      } else if (lepero) {
+        historias = [
+          "En Lepe las flores se marchitan en Primavera, así que no había excusa.",
+          nombre + " era una persona modesta que conducía un Ford Ka.",
+          "Cada semana " + nombre + " visitaba a sus padres.",
+          "Cualquiera lo hubiera adivinado.",
+          "Llovía fuerte aquella noche y " + nombre + " no podía dejar de pensar en los campos de fresas.",
+          "A " + nombre + " no le gustaba la informática."
+        ];
+      }
+
+      // Seleccionar historia aleatoria
+      const index = Math.floor(Math.random() * historias.length);
+      texto.innerHTML = historias[index];
+    });
+  </script>
+
+</body>
+</html>

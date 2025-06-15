@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contar Caracteres</title>
+</head>
+<body>
+  <h2>Analizar Frase</h2>
+  <input type="text" id="frase" placeholder="Introduce una frase"><br>
+  <input type="text" id="palabra" placeholder="Palabra a buscar"><br>
+  <button onclick="analizar()">Analizar</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function analizar() {
+      const frase = document.getElementById("frase").value;
+      const palabra = document.getElementById("palabra").value;
+      const total = frase.length;
+      const pos = frase.lastIndexOf(palabra);
+
+      document.getElementById("resultado").innerHTML =
+        `Total caracteres: ${total}<br>Última posición de "${palabra}": ${pos}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 3 - Mezclar Array</title>
+</head>
+<body>
+    <h1>Actividad 3 - Mezclar Array</h1>
+    <p>Abre la consola del navegador (F12) para ver los resultados</p>
+
+    <script>
+        function generarArrayAleatorio(numElementos = 10, minimo = 100, maximo = 200) {
+            const array = [];
+            for (let i = 0; i < numElementos; i++) {
+                array.push(Math.floor(Math.random() * (maximo - minimo + 1)) + minimo);
+            }
+            return array;
+        }
+
+        function mezclarArray(array) {
+            const arrayMezclado = [...array];
+            for (let i = arrayMezclado.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arrayMezclado[i], arrayMezclado[j]] = [arrayMezclado[j], arrayMezclado[i]];
+            }
+            return arrayMezclado;
+        }
+
+        const arrayAleatorio = generarArrayAleatorio(20, 20, 100);
+        const arrayOrdenado = arrayAleatorio.sort((a, b) => a - b);
+        console.log("Array ordenado:", arrayOrdenado);
+        
+        const arrayMezclado = mezclarArray(arrayOrdenado);
+        console.log("Array mezclado:", arrayMezclado);
+    </script>
+</body>
+</html>
